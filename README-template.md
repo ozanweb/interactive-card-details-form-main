@@ -65,7 +65,14 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### What I learned
 
-- The best way of displaying a ```div``` tag without with only a background image in it is below;
+* Client Side Form Validation
+There are two types of form validations. They are as follows.
+* * Built-in Form Validation (HTML)
+* * Form Validation with JS (The Constraint Validation API)
+
+* Attributes such as; ```required``` and ```pattern``` are used inside ```input``` elements to set constrains for the input value
+
+* The best way of displaying a ```div``` tag without with only a background image in it is below;
 
 ```css
 div {
@@ -76,6 +83,10 @@ div {
 }
 ```
 ```background-size``` property is used to resize the bg image while keeping its aspect ratio.
+
+* In order to stretch the text throughout its parent element (proportional space between words) an elemenet like ```span``` should be placed inside the text's element and set its ```width``` to ```100%``` before applying ```text-align: justify``` to the text.
+
+* 
 
 
 ### Continued development

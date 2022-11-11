@@ -10,11 +10,73 @@
 
 </head>
 <body>
-  <main class="main-grid">
-    <div class="grid-item-1">
+  <main class="main">
+    <div class="main-top">
+      <div class="img-back">
+        <img src="images/bg-card-back.png" alt="">
+        <p class="cvc">000</p>
+      </div>
+      <div class="img-front">
+        <img src="images/bg-card-front.png" alt="">
+        <img class="logo" src="images/card-logo.svg" alt="">
+        <div class="img-front-text">
+          <p class="text-top" id="front-no">
+            0000 0000 0000 0000
+            <span class="test"> </span>
+          </p>
+          
+          <div class="text-bottom-flex">
+            <p id="front-holder">Jane Appleseed</p>
+            <p><span>00</span>/<span>00</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- BOTTOM -->
+    <div class="main-bottom">
+      <form autocomplete="off" id="form" class="form" action="/" method="get">
+        <fieldset>
+          <div class="name">
+            <label for="name">Cardholder Name</label>
+            <input id="name" type="text" placeholder="e.g. Jane Appleseed" onkeyup="validateName()">
+            <span id="name-err" class="err">name-err</span>
+          </div>
+          <div class="no">
+            <label for="no">Card Number</label>
+            <input id="no" type="number" placeholder="e.g. 1234 5678 9123 0000" onkeyup="validateNo()">
+            <span id="no-err" class="err">Can't be blank</span>
+          </div>
+          <div class="flex">
+            <div class="left-flex-item">
+              <label>Exp. Date (MM/YY)</label>
+              <div class="date">
+                <span class="mm">
+                  <input type="number" id="mm" maxlength="2" aria-label="mm" placeholder="MM" oninput="monthValidate(event)">
+                </span>
+                <span class="yy">
+                  <input max="99" aria-label="yy" type="number" placeholder="YY" oninput="yearValidate(event)">
+                </span>
+              </div>
+              <span id="date-err" class="err">Can't be blank</span>
+            </div>
+            <div class="right-flex-item">
+              <label for="cvc">CVC</label>
+              <input id="cvc" maxlength="3" type="number" placeholder="e.g. 123" oninput="cvcValidate()">
+              <span id="cvc-err" class="err">Can't be blank</span>
+            </div>
+          </div>
+        </fieldset>
+        <div class="submit-btn">
+          <button type="submit">Confirm</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- <div class="top">
+     
         <div class="card-back">
           <img class="invisible" src="images/bg-card-back.png" alt="">
-          <p class="cvc-inp">000</p>
+          <p class="cvc">000</p>
         </div>
 
         <div class="card-front">
@@ -24,38 +86,43 @@
             <p class="cardNo" id="cardNo">0000 0000 0000 0000</p>
             <div class="flexbox">
               <p id="cardHolder">Jane Appleseed</p>
-              <p><span id="mm">00</span>/<span id="yy">00</span></p>
+              <p><span>00</span>/<span>00</span></p>
             </div>
           </div>
         </div>
      
     </div>
-    <div class="grid-item-2">
-      <form id="form" class="form" action="">
+    <div class="bottom-form">
+      <form autocomplete="off" id="form" class="form" action="/" method="get">
 
         <fieldset>
-          <div>
+          <div class="name">
             <label for="name">Cardholder Name</label>
-            <input type="text" placeholder="e.g. Jane Appleseed">
+            <input id="name" type="text" placeholder="e.g. Jane Appleseed" onkeyup="validateName()">
+            <span id="name-err" class="name-err"></span>
           </div>
-        </fieldset>
-  
-        <fieldset>
-          <div>
+          <div class="cardnum">
             <label for="cardnum">Card Number</label>
-            <input type="number" required placeholder="e.g. 1234 5678 9123 0000">
+            <input id="cardnum" type="text" placeholder="e.g. 1234 5678 9123 0000" onkeyup="validateCardNo()">
+            <span id="cardnum-err" class="cardnum-err"></span>
           </div>
-            <div class="flexbox">
-              <div class="">
-                <label>Exp. Date (MM/YY)</label>
-                <input aria-label="mm" size="2" type="number" placeholder="MM">
-                <input aria-label="yy"  size="2" type="number" placeholder="YY">
-              </div>
-              <div>
-                <label for="">CVC</label>
-                <input type="number" placeholder="e.g. 123">
+          <div class="flexbox">
+            <div class="left">
+              <label>Exp. Date (MM/YY)</label>
+              <div class="inputs">
+                <span class="mm">
+                  <input type="number" id="mm" maxlength="2" aria-label="mm" placeholder="MM">
+                </span>
+                <span class="yy">
+                  <input max="99" aria-label="yy" type="number" placeholder="YY">
+                </span>
               </div>
             </div>
+            <div class="right">
+              <label for="cvc">CVC</label>
+              <input id="cvc" maxlength="3" type="number" placeholder="e.g. 123">
+            </div>
+          </div>
         </fieldset>
         <div>
           <button type="submit">Confirm</button>
@@ -63,23 +130,18 @@
       </form>
      
     </div>
-    <div class="grid-item-3 hide">
-      <img src="" alt="">
-      <div class="ty-msg">
-        <h2>Thank you!</h2>
-        <p>We've added your card details</p>
+    <div class="bottom-msg hide">
+      <div class="thankyou">
+        <img class="complete" src="images/icon-complete.svg" alt="">
+        <div class="msg">
+          <h2>Thank you!</h2>
+          <p>We've added your card details</p>
+        </div>
+        <input type="button" value="Continue">
       </div>
-      <input type="button" value="Continue">
-    </div>
+    </div> -->
   </main>
 
- 
-
-  <!-- Form Starts here -->
-
-
-  <!-- Completed state start -->
-
-  
+  <script src="main.js"></script>
 </body>
 </html>
